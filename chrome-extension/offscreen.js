@@ -229,10 +229,15 @@ async function processImageJob(payload) {
   return { dataUrl, backend: modelState.backend };
 }
 
-chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg?.type !== "MIT_PROCESS_IMAGE") return;
 
-  processImageJob(msg)
+  const payload = {
+    ...msg,
+    tabId: msg.tabId ?? sender?.tab?.id
+  };
+
+  processImageJob(payload)
     .then((result) => sendResponse({ ok: true, ...result }))
     .catch((error) => sendResponse({ ok: false, error: error.message || String(error) }));
 
