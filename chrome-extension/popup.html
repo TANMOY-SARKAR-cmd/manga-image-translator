@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manga Translator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="mit-popup">
+  <main>
+    <h1>Manga Translator</h1>
+
+    <label class="mit-row">
+      <span>Enable extension</span>
+      <input id="enabled" type="checkbox" />
+    </label>
+
+    <label class="mit-row">
+      <span>Target language</span>
+      <select id="targetLang">
+        <option value="eng_Latn">English</option>
+        <option value="spa_Latn">Spanish</option>
+        <option value="fra_Latn">French</option>
+        <option value="deu_Latn">German</option>
+        <option value="ita_Latn">Italian</option>
+      </select>
+    </label>
+
+    <label class="mit-row">
+      <span>Enable inpainting</span>
+      <input id="inpainting" type="checkbox" />
+    </label>
+
+    <label class="mit-row">
+      <span>Max image width</span>
+      <select id="maxWidth">
+        <option value="960">960 px</option>
+        <option value="1280">1280 px</option>
+        <option value="1600">1600 px</option>
+        <option value="1920">1920 px</option>
+      </select>
+    </label>
+
+    <label class="mit-row">
+      <span>Text removal mode</span>
+      <select id="removeTextMode">
+        <option value="remove">Remove + overlay</option>
+        <option value="overlay">Overlay only</option>
+      </select>
+    </label>
+
+    <div class="mit-actions">
+      <button id="translatePage">Translate images on this page</button>
+      <button id="clearCache" class="secondary">Clear cached models</button>
+    </div>
+
+    <p id="status" class="mit-status" aria-live="polite"></p>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

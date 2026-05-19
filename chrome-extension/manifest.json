@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Manga Image Translator (Local)",
+  "description": "Translate manga images fully on-device with WebGPU/ONNX in an offscreen document.",
+  "version": "0.1.0",
+  "permissions": ["storage", "activeTab", "contextMenus", "offscreen", "alarms"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

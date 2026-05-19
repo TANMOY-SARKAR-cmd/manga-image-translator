@@ -1,0 +1,68 @@
+.mit-popup {
+  margin: 0;
+  min-width: 300px;
+  font: 14px/1.4 "Roboto", Arial, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.mit-popup main {
+  padding: 12px;
+}
+
+.mit-popup h1 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.mit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.mit-row select,
+.mit-row input[type="checkbox"] {
+  flex: 0 0 auto;
+}
+
+.mit-actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.mit-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mit-actions button.secondary {
+  background: #64748b;
+}
+
+.mit-status {
+  margin: 10px 0 0;
+  min-height: 18px;
+  font-size: 12px;
+}
+
+.mit-progress {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  background: rgba(15, 23, 42, 0.86);
+  color: #fff;
+  font: 12px/1.2 "Roboto", Arial, sans-serif;
+  padding: 5px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  max-width: 80%;
+}
